@@ -8,6 +8,6 @@ public class AppRunner {
         BankingAppMenu bankingAppMenu = new BankingAppMenu();
         Customer customerOne = new Customer("John Dale", "1");
         Customer customerTwo = new Customer("Michael Jordan", "2", 10000);
-        bankingAppMenu.showMenu(customerOne);
+        bankingAppMenu.showMenu(customerTwo);
     }
 }

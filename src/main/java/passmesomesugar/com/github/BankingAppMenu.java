@@ -17,17 +17,18 @@ public class BankingAppMenu {
             option = Character.toUpperCase(option1);
             switch (option) {
                 case 'A':
-                    int amountToDeposit = scanner.nextInt();
-                    customer.deposit(amountToDeposit);
+                    int depositAmount = scanner.nextInt();
+                    customer.deposit(depositAmount);
                     break;
                 case 'S':
                     System.out.println(customer.showFunds());
                     break;
                 case 'D':
-                    System.out.println("");
+                    int withdrawalAmount = scanner.nextInt();
+                    customer.withdraw(withdrawalAmount);
                     break;
                 case 'F':
-                    System.out.println("");
+                    System.out.println("**Some future functionality");
                     break;
             }
         }

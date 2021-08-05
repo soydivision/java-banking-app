@@ -25,5 +25,9 @@ public class Customer {
     public void deposit(int amount) {
         deposit += amount;
     }
+
+    public void withdraw(int amount) {
+        deposit -= amount;
+    }
 }
 
