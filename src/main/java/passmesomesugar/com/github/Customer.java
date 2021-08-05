@@ -4,6 +4,8 @@ public class Customer {
     private String name;
     private String id;
     private int deposit;
+    private String password;
+    private String logInName;
 
     public Customer(String name, String id, int deposit) {
         this.name = name;
