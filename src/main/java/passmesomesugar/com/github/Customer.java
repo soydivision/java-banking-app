@@ -21,5 +21,9 @@ public class Customer {
     public int showFunds() {
         return this.deposit;
     }
+
+    public void deposit(int amount) {
+        deposit += amount;
+    }
 }
 
