@@ -62,5 +62,18 @@ public class Customer {
         // this simply means we decrease the value deposit by amount.
         deposit -= amount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Customer)) {
+            return false;
+        }
+        Customer castedObject = (Customer) o;
+        if (id.compareTo(castedObject.getId()) == 0) return true;
+        else return false;
+    }
 }
 
