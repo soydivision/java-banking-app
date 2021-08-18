@@ -8,9 +8,9 @@ public class CustomerBusinessObject {
 
     public CustomerBusinessObject() {
         customers = new ArrayList<Customer>();
-        Customer customerOne = new Customer("John Dale", "JohnDale", "asdfasd", "1");
-        Customer customerTwo = new Customer("Michael Jordan", "2", "10000", "2", 5000);
-        Customer customerThree = new Customer("Michael Jordanos", "2", "10000", "2", 5000);
+        Customer customerOne = new Customer("John Dale", "JohnDale", "asdfasd", 1);
+        Customer customerTwo = new Customer("Michael Jordan", "2", "10000", 2, 5000);
+        Customer customerThree = new Customer("Michael Jordanos", "2", "10000", 2, 5000);
         customers.add(customerOne);
         customers.add(customerTwo);
         customers.add(customerThree);

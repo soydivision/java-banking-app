@@ -2,14 +2,14 @@ package passmesomesugar.com.github;
 
 public class Customer {
     private String name;
-    private String id;
+    private int id;
     private int deposit;
     private String password;
     private String logInNameOrEmail;
     private String email;
 
     // Customer constructor #1
-    public Customer(String name, String logInNameOrEmail, String password, String id, int deposit) {
+    public Customer(String name, String logInNameOrEmail, String password, int id, int deposit) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
@@ -18,7 +18,7 @@ public class Customer {
     }
 
     // Customer constructor #2
-    public Customer(String name, String logInNameOrEmail, String password, String id) {
+    public Customer(String name, String logInNameOrEmail, String password, int id) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
@@ -33,11 +33,11 @@ public class Customer {
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -68,12 +68,16 @@ public class Customer {
         if (o == this) {
             return true;
         }
-        if (!(o instanceof Customer)) {
+        if (o == null || o.getClass() != this.getClass()) {
             return false;
         }
         Customer castedObject = (Customer) o;
-        if (id.compareTo(castedObject.getId()) == 0) return true;
-        else return false;
+        return (castedObject.id == this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 }
 
