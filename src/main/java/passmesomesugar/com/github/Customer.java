@@ -8,6 +8,30 @@ public class Customer {
     private String logInNameOrEmail;
     private String email;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogInNameOrEmail() {
+        return logInNameOrEmail;
+    }
+
+    public void setLogInNameOrEmail(String logInNameOrEmail) {
+        this.logInNameOrEmail = logInNameOrEmail;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     // Customer constructor #1
     public Customer(String name, String logInNameOrEmail, String password, int id, int deposit) {
         this.name = name;
@@ -23,6 +47,10 @@ public class Customer {
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
         this.id = id;
+    }
+
+    // Customer constructor #3
+    public Customer() {
     }
 
     public String getName() {
