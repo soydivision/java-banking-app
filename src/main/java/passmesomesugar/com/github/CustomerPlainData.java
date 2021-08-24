@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CustomerBusinessObject {
+public class CustomerPlainData {
     List<Customer> customers;
 
-    public CustomerBusinessObject() {
-        customers = new ArrayList<Customer>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),
+    public CustomerPlainData() {
+        customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),
                 new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000),
                 new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000)));
     }

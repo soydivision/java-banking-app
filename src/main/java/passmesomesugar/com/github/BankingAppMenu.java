@@ -27,6 +27,9 @@ public class BankingAppMenu {
                 case 'F':
                     System.out.println("**Some future functionality");
                     break;
+                case 'G':
+                    System.out.println("You have left the app");
+                    break;
                 default:
                     System.out.println("Please enter valid option");
                     showMenu();

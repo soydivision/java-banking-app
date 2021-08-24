@@ -1,7 +1,7 @@
 package passmesomesugar.com.github;
 
 public class CustomerLogInAndPasswordChecker {
-    CustomerBusinessObject customerBusinessObject = new CustomerBusinessObject();
+    CustomerPlainData customerBusinessObject = new CustomerPlainData();
 
     public void verifyUser(String logInUserName, String password) {
         Customer userToBeVerified =
