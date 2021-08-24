@@ -1,19 +1,16 @@
 package passmesomesugar.com.github;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CustomerBusinessObject {
     List<Customer> customers;
 
     public CustomerBusinessObject() {
-        customers = new ArrayList<Customer>();
-        Customer customerOne = new Customer("John Dale", "JohnDale", "batman", 1);
-        Customer customerTwo = new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000);
-        Customer customerThree = new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000);
-        customers.add(customerOne);
-        customers.add(customerTwo);
-        customers.add(customerThree);
+        customers = new ArrayList<Customer>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),
+                new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000),
+                new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000)));
     }
 
     public void removeCustomer(Customer customer) {
@@ -25,7 +22,7 @@ public class CustomerBusinessObject {
         return customers;
     }
 
-    public Customer getCustomerByLogInNameOrEmail(int id) {
+    public Customer getCustomerById(int id) {
         return customers.get(id);
     }
 
