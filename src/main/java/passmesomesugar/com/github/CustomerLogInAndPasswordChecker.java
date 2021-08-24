@@ -1,11 +1,11 @@
 package passmesomesugar.com.github;
 
 public class CustomerLogInAndPasswordChecker {
-    CustomerPlainData customerBusinessObject = new CustomerPlainData();
+    CustomerPlainData customerPlainData = new CustomerPlainData();
 
     public void verifyUser(String logInUserName, String password) {
         Customer userToBeVerified =
-                customerBusinessObject.getCustomerByLogInNameOrEmail(logInUserName);
+                customerPlainData.getCustomerByLogInNameOrEmail(logInUserName);
         if (userToBeVerified.getPassword().compareTo(password) == 0) {
             System.out.println("User exists and password is correct");
             new BankingAppMenu().initializeMenu(userToBeVerified);
