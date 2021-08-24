@@ -3,6 +3,10 @@ package passmesomesugar.com.github;
 public class CustomerLogInAndPasswordChecker {
     CustomerPlainData customerPlainData = new CustomerPlainData();
 
+    public boolean checkIfUserExists(String logInUserName) {
+        return customerPlainData.checkIfCustomerExists(logInUserName);
+    }
+
     public void verifyUser(String logInUserName, String password) {
         Customer userToBeVerified =
                 customerPlainData.getCustomerByLogInNameOrEmail(logInUserName);

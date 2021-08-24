@@ -35,4 +35,15 @@ public class CustomerPlainData {
         }
         return searchResult;
     }
+
+    public boolean checkIfCustomerExists(String logInNameOrEmail) {
+        Customer searchResult = new Customer();
+        boolean customerExists = false;
+        for (Customer customer : customers) {
+            if ((customer.getLogInNameOrEmail().compareTo(logInNameOrEmail) == 0)) {
+                customerExists = true;
+            }
+        }
+        return customerExists;
+    }
 }
