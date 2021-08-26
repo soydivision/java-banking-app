@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CustomerPlainData {
-    List<Customer> customers;
+    private List<Customer> customers;
 
     public CustomerPlainData() {
         customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),

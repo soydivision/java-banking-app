@@ -83,12 +83,14 @@ public class Customer {
 
     public void deposit(int amount) {
         // this simply means we increase the value deposit by amount.
-        deposit += amount;
+        if (amount > 0)
+            deposit += amount;
     }
 
     public void withdraw(int amount) {
         // this simply means we decrease the value deposit by amount.
-        deposit -= amount;
+        if (amount <= deposit)
+            deposit -= amount;
     }
 
     @Override
@@ -106,6 +108,18 @@ public class Customer {
     @Override
     public int hashCode() {
         return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", deposit=" + deposit +
+                ", password='" + password + '\'' +
+                ", logInNameOrEmail='" + logInNameOrEmail + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 
