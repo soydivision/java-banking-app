@@ -1,5 +1,11 @@
 package passmesomesugar.com.github;
 
+import passmesomesugar.com.github.funds.Card;
+import passmesomesugar.com.github.funds.Deposit;
+
+import java.util.Hashtable;
+import java.util.List;
+
 public class Customer {
     private String name;
     private int id;
@@ -7,6 +13,8 @@ public class Customer {
     private String password;
     private String logInNameOrEmail;
     private String email;
+    List<Card> cards;
+    //List<Deposit> deposits;
 
     public String getPassword() {
         return password;
@@ -53,6 +61,15 @@ public class Customer {
     public Customer() {
     }
 
+    // Customer constructor #4
+    public Customer(String name, String logInNameOrEmail, String password, int id, List cards) {
+        this.name = name;
+        this.logInNameOrEmail = logInNameOrEmail;
+        this.password = password;
+        this.id = id;
+        this.cards = cards;
+    }
+
     public String getName() {
         return name;
     }
@@ -89,7 +106,7 @@ public class Customer {
 
     public void withdraw(int amount) {
         // this simply means we decrease the value deposit by amount.
-        if (amount <= deposit)
+        if (amount <= deposit && amount > 0)
             deposit -= amount;
     }
 

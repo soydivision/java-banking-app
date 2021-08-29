@@ -1,5 +1,7 @@
 package passmesomesugar.com.github;
 
+import passmesomesugar.com.github.data_objects.CustomerPlainData;
+
 public class CustomerLogInAndPasswordChecker {
     CustomerPlainData customerPlainData = new CustomerPlainData();
 
