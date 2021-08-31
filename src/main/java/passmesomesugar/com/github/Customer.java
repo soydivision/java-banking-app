@@ -8,13 +8,15 @@ import java.util.List;
 public class Customer {
     private String name;
     private int id;
-    //private int deposit;
     private Deposit deposit = new Deposit();
     private String password;
     private String logInNameOrEmail;
     private String email;
-    Card card;
-    //List<Deposit> deposits;
+    private Card card;
+
+    public boolean hasCard() {
+        return card != null;
+    }
 
     public String getPassword() {
         return password;
@@ -86,8 +88,8 @@ public class Customer {
         this.id = id;
     }
 
-    public int getDeposit() {
-        return deposit.getDeposit();
+    public void getDeposit() {
+        deposit.showFunds();
     }
 
     public void setDeposit(int depositValue) {
@@ -115,11 +117,6 @@ public class Customer {
     }
 
     public void showCardFunds() {
-//        for (Card card : cards) {
-//            System.out.println(card.getName());;
-//            card.showFunds();
-//        }
-        //cards.get(0).showFunds();
         card.showFunds();
     }
 

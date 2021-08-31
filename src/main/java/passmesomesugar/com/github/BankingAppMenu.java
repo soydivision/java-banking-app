@@ -18,14 +18,18 @@ public class BankingAppMenu {
                     customer.deposit(depositAmount);
                     break;
                 case 'S':
-                    customer.showCardFunds();
+                    if (customer.hasCard()) {
+                        customer.showCardFunds();
+                    } else {
+                        System.out.println("No card found");
+                    }
                     break;
                 case 'D':
                     int withdrawalAmount = scanner.nextInt();
                     customer.withdraw(withdrawalAmount);
                     break;
                 case 'F':
-                    System.out.println("**Some future functionality");
+                    customer.getDeposit();
                     break;
                 case 'G':
                     System.out.println("You have left the app");

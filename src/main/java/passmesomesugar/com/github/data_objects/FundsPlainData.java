@@ -13,6 +13,7 @@ public class FundsPlainData {
 
     public Card getCard() {
         cardsTable.put(passmesomesugar.com.github.Currency.USD, 23);
+        cardsTable.put(passmesomesugar.com.github.Currency.EURO, 48);
         Card visa1 = new Card(cardsTable);
         return visa1;
     }

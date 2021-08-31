@@ -16,7 +16,7 @@ public class CustomerPlainData {
     }
 
     public CustomerPlainData() {
-        customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),
+        customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JD", "12", 1),
                 new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000),
                 new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000),
                 new Customer("Lol Kekovich", "lol", "12", 4, fundsPlainData.getCard())));

@@ -20,9 +20,13 @@ public class Card implements BankingAccountOperations, CurrencyConvertion, Cashb
         return name;
     }
 
+    public Hashtable getFundsHashTable() {
+        return fundsByCurrencies;
+    }
+
     @Override
     public void showFunds() {
-        System.out.println(fundsByCurrencies);
+        System.out.println(getFundsHashTable());
     }
 
     @Override

@@ -1,7 +1,7 @@
 package passmesomesugar.com.github;
 
 public class Deposit implements BankingAccountOperations {
-    int deposit;
+    private int deposit;
 
     public int getDeposit() {
         return deposit;
@@ -13,6 +13,7 @@ public class Deposit implements BankingAccountOperations {
 
     @Override
     public void showFunds() {
+        System.out.println(deposit);
     }
 
     @Override
