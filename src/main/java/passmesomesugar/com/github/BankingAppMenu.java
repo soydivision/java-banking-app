@@ -18,7 +18,7 @@ public class BankingAppMenu {
                     customer.deposit(depositAmount);
                     break;
                 case 'S':
-                    System.out.println(customer.showFunds());
+                    customer.showCardFunds();
                     break;
                 case 'D':
                     int withdrawalAmount = scanner.nextInt();
@@ -40,10 +40,10 @@ public class BankingAppMenu {
     }
 
     public void showMenu() {
-        System.out.println("A.Deposit funds");
-        System.out.println("S.Show funds");
-        System.out.println("D.Withdraw funds");
-        System.out.println("F.");// Soon to be implemented
+        System.out.println("A. Deposit funds");
+        System.out.println("S. Show card funds");
+        System.out.println("D. Withdraw funds");
+        System.out.println("F. Show deposit funds");// Soon to be implemented
         System.out.println("G.Abort");
     }
 }

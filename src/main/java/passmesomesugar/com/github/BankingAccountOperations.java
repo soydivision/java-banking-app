@@ -1,6 +1,8 @@
 package passmesomesugar.com.github;
 
 public interface BankingAccountOperations {
+    void showFunds();
+
     void transfer();
 
     void deposit();

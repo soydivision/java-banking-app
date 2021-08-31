@@ -1,8 +1,5 @@
 package passmesomesugar.com.github;
 
-import passmesomesugar.com.github.cards.MasterCard;
-import passmesomesugar.com.github.funds.Card;
-
 /**
  * Hello world!
  */

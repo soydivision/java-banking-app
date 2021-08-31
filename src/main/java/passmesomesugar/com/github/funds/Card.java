@@ -8,11 +8,21 @@ import passmesomesugar.com.github.Currency;
 import java.util.Hashtable;
 
 public class Card implements BankingAccountOperations, CurrencyConvertion, Cashback {
-    Hashtable<Currency, Integer> currencies;
+    String name = "test name";
+    private Hashtable<Currency, Integer> fundsByCurrencies;
     static int allCardsCounter;
 
     public Card(Hashtable<Currency, Integer> currencies) {
-        this.currencies = currencies;
+        this.fundsByCurrencies = currencies;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void showFunds() {
+        System.out.println(fundsByCurrencies);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package passmesomesugar.com.github;
 
 import passmesomesugar.com.github.funds.Card;
-import passmesomesugar.com.github.funds.Deposit;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -9,11 +8,12 @@ import java.util.List;
 public class Customer {
     private String name;
     private int id;
-    private int deposit;
+    //private int deposit;
+    private Deposit deposit = new Deposit();
     private String password;
     private String logInNameOrEmail;
     private String email;
-    List<Card> cards;
+    Card card;
     //List<Deposit> deposits;
 
     public String getPassword() {
@@ -41,12 +41,12 @@ public class Customer {
     }
 
     // Customer constructor #1
-    public Customer(String name, String logInNameOrEmail, String password, int id, int deposit) {
+    public Customer(String name, String logInNameOrEmail, String password, int id, int depositValue) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
         this.id = id;
-        this.deposit = deposit;
+        deposit.setDeposit(depositValue);
     }
 
     // Customer constructor #2
@@ -62,12 +62,12 @@ public class Customer {
     }
 
     // Customer constructor #4
-    public Customer(String name, String logInNameOrEmail, String password, int id, List cards) {
+    public Customer(String name, String logInNameOrEmail, String password, int id, Card card) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
         this.id = id;
-        this.cards = cards;
+        this.card = card;
     }
 
     public String getName() {
@@ -87,27 +87,40 @@ public class Customer {
     }
 
     public int getDeposit() {
-        return deposit;
+        return deposit.getDeposit();
     }
 
-    public void setDeposit(int deposit) {
-        this.deposit = deposit;
+    public void setDeposit(int depositValue) {
+        deposit.setDeposit(depositValue);
     }
 
     public int showFunds() {
-        return this.deposit;
+        return this.deposit.getDeposit();
     }
 
     public void deposit(int amount) {
         // this simply means we increase the value deposit by amount.
-        if (amount > 0)
-            deposit += amount;
+        if (amount > 0) {
+            int currentDepositValue = deposit.getDeposit();
+            deposit.setDeposit(currentDepositValue += amount);
+        }
     }
 
     public void withdraw(int amount) {
         // this simply means we decrease the value deposit by amount.
-        if (amount <= deposit && amount > 0)
-            deposit -= amount;
+        if (amount <= deposit.getDeposit() && amount > 0) {
+            int currentDepositValue = deposit.getDeposit();
+            deposit.setDeposit(currentDepositValue -= amount);
+        }
+    }
+
+    public void showCardFunds() {
+//        for (Card card : cards) {
+//            System.out.println(card.getName());;
+//            card.showFunds();
+//        }
+        //cards.get(0).showFunds();
+        card.showFunds();
     }
 
     @Override

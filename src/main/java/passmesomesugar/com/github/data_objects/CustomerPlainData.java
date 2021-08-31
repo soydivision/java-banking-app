@@ -1,6 +1,7 @@
 package passmesomesugar.com.github.data_objects;
 
 import passmesomesugar.com.github.Customer;
+import passmesomesugar.com.github.funds.Card;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,15 +11,15 @@ public class CustomerPlainData {
     private List<Customer> customers;
     private FundsPlainData fundsPlainData = new FundsPlainData();
 
-    public List getCardsFromFunds() {
-        return fundsPlainData.getCards();
+    public Card getCardFromFunds() {
+        return fundsPlainData.getCard();
     }
 
     public CustomerPlainData() {
         customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JohnDale", "batman", 1),
                 new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000),
                 new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000),
-                new Customer("Lol Kekovich", "lol", "12345", 4, getCardsFromFunds())));
+                new Customer("Lol Kekovich", "lol", "12", 4, fundsPlainData.getCard())));
     }
 
     public void removeCustomer(Customer customer) {
