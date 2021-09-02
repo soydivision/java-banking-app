@@ -1,6 +1,7 @@
 package passmesomesugar.com.github.data_objects;
 
 import passmesomesugar.com.github.Currency;
+import passmesomesugar.com.github.funds.Deposit;
 import passmesomesugar.com.github.funds.Card;
 
 import java.util.Hashtable;
@@ -16,5 +17,11 @@ public class FundsPlainData {
         cardsTable.put(passmesomesugar.com.github.Currency.EURO, 48);
         Card visa1 = new Card(cardsTable);
         return visa1;
+    }
+
+    public Deposit getDeposit() {
+        Deposit deposit = new Deposit();
+        deposit.setDeposit(5000);
+        return deposit;
     }
 }

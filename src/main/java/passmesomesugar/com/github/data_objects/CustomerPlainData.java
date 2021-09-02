@@ -16,9 +16,9 @@ public class CustomerPlainData {
     }
 
     public CustomerPlainData() {
-        customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "JD", "12", 1),
-                new Customer("Michael Jordan", "Jordan78", "pass", 2, 5000),
-                new Customer("Michael Jordanos", "MikeTison210", "123", 3, 5000),
+        customers = new ArrayList<>(Arrays.asList(new Customer("John Dale", "jd", "12", 1),
+                new Customer("Michael Jordan", "j78", "pass", 2, fundsPlainData.getDeposit()),
+                new Customer("Michael Jordanos", "Mike", "123", 3, fundsPlainData.getDeposit()),
                 new Customer("Lol Kekovich", "lol", "12", 4, fundsPlainData.getCard())));
     }
 
@@ -46,7 +46,6 @@ public class CustomerPlainData {
     }
 
     public boolean checkIfCustomerExists(String logInNameOrEmail) {
-        Customer searchResult = new Customer();
         boolean customerExists = false;
         for (Customer customer : customers) {
             if ((customer.getLogInNameOrEmail().compareTo(logInNameOrEmail) == 0)) {

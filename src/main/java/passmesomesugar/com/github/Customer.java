@@ -1,9 +1,7 @@
 package passmesomesugar.com.github;
 
 import passmesomesugar.com.github.funds.Card;
-
-import java.util.Hashtable;
-import java.util.List;
+import passmesomesugar.com.github.funds.Deposit;
 
 public class Customer {
     private String name;
@@ -13,6 +11,10 @@ public class Customer {
     private String logInNameOrEmail;
     private String email;
     private Card card;
+
+    public boolean hasDeposit() {
+        return deposit != null;
+    }
 
     public boolean hasCard() {
         return card != null;
@@ -42,16 +44,17 @@ public class Customer {
         this.email = email;
     }
 
-    // Customer constructor #1
-    public Customer(String name, String logInNameOrEmail, String password, int id, int depositValue) {
+    public Customer() {
+    }
+
+    public Customer(String name, String logInNameOrEmail, String password, int id, Deposit deposit) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
         this.password = password;
         this.id = id;
-        deposit.setDeposit(depositValue);
+        this.deposit = deposit;
     }
 
-    // Customer constructor #2
     public Customer(String name, String logInNameOrEmail, String password, int id) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
@@ -59,11 +62,6 @@ public class Customer {
         this.id = id;
     }
 
-    // Customer constructor #3
-    public Customer() {
-    }
-
-    // Customer constructor #4
     public Customer(String name, String logInNameOrEmail, String password, int id, Card card) {
         this.name = name;
         this.logInNameOrEmail = logInNameOrEmail;
@@ -88,36 +86,12 @@ public class Customer {
         this.id = id;
     }
 
-    public void getDeposit() {
-        deposit.showFunds();
+    public Deposit getDeposit() {
+        return deposit;
     }
 
-    public void setDeposit(int depositValue) {
-        deposit.setDeposit(depositValue);
-    }
-
-    public int showFunds() {
-        return this.deposit.getDeposit();
-    }
-
-    public void deposit(int amount) {
-        // this simply means we increase the value deposit by amount.
-        if (amount > 0) {
-            int currentDepositValue = deposit.getDeposit();
-            deposit.setDeposit(currentDepositValue += amount);
-        }
-    }
-
-    public void withdraw(int amount) {
-        // this simply means we decrease the value deposit by amount.
-        if (amount <= deposit.getDeposit() && amount > 0) {
-            int currentDepositValue = deposit.getDeposit();
-            deposit.setDeposit(currentDepositValue -= amount);
-        }
-    }
-
-    public void showCardFunds() {
-        card.showFunds();
+    public Card getCard() {
+        return this.card;
     }
 
     @Override

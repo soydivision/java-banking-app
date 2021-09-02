@@ -1,4 +1,6 @@
-package passmesomesugar.com.github;
+package passmesomesugar.com.github.funds;
+
+import passmesomesugar.com.github.BankingAccountOperations;
 
 public class Deposit implements BankingAccountOperations {
     private int deposit;
@@ -21,15 +23,17 @@ public class Deposit implements BankingAccountOperations {
     }
 
     @Override
-    public void deposit() {
+    public void deposit(int amount) {
+        deposit += amount;
     }
 
     @Override
-    public void withdraw() {
-    }
-
-    @Override
-    public void convert() {
+    public void withdraw(int amount) {
+        //deposit -= amount;
+        if (amount <= this.getDeposit() && amount > 0) {
+            int currentDepositValue = this.getDeposit();
+            this.setDeposit(currentDepositValue -= amount);
+        }
     }
 
     @Override

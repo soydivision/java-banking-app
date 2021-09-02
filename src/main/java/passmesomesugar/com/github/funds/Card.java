@@ -34,11 +34,11 @@ public class Card implements BankingAccountOperations, CurrencyConvertion, Cashb
     }
 
     @Override
-    public void deposit() {
+    public void deposit(int amount) {
     }
 
     @Override
-    public void withdraw() {
+    public void withdraw(int amount) {
     }
 
     @Override

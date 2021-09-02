@@ -5,11 +5,9 @@ public interface BankingAccountOperations {
 
     void transfer();
 
-    void deposit();
+    void deposit(int amount);
 
-    void withdraw();
-
-    void convert();
+    void withdraw(int amount);
 
     void pay();
 }

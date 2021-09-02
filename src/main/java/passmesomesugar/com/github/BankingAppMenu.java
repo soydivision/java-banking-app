@@ -14,22 +14,26 @@ public class BankingAppMenu {
             option = Character.toUpperCase(option1);
             switch (option) {
                 case 'A':
-                    int depositAmount = scanner.nextInt();
-                    customer.deposit(depositAmount);
+                    int amountToDeposit = scanner.nextInt();
+                    customer.getDeposit().deposit(amountToDeposit);
                     break;
                 case 'S':
                     if (customer.hasCard()) {
-                        customer.showCardFunds();
+                        customer.getCard().showFunds();
                     } else {
                         System.out.println("No card found");
                     }
                     break;
                 case 'D':
                     int withdrawalAmount = scanner.nextInt();
-                    customer.withdraw(withdrawalAmount);
+                    customer.getDeposit().withdraw(withdrawalAmount);
                     break;
                 case 'F':
-                    customer.getDeposit();
+                    if (customer.hasDeposit()) {
+                        customer.getDeposit().showFunds();
+                    } else {
+                        System.out.println("No deposit found");
+                    }
                     break;
                 case 'G':
                     System.out.println("You have left the app");
